@@ -1,0 +1,99 @@
+package work1;
+
+import java.util.HashMap;
+import java.util.Map;
+
+class Account/* 계좌 */{
+	
+	private long accountNumber; // 계좌번호
+	private int balance; // 잔고
+	
+	public Account(long accountNumber) {
+		
+		this.accountNumber = accountNumber;
+		this.balance =0;
+	}
+		
+	public long getAccountNumber() {
+		
+		return accountNumber;
+	}
+	
+	public int getBalance() {
+		
+		return balance;
+	}
+	
+}
+
+class User /* 유저 */{
+	
+	private long id; // 유저 아이디 (1부터 증가)
+	private String name; // 사용자 이름
+	
+	public User(long id, String name) {
+		this.id = id;
+		this.name = name;
+		
+	}
+	public long getId() {
+		
+		return id;
+	}
+	
+	public String getname() {
+		
+		return name;
+	}
+	
+	
+}
+
+class BankAccount /* 뱅크 계좌 */{
+	
+	private Account account;
+	private User user;
+	
+	public BankAccount(Account account, User user) {
+		
+		this.account = account;
+		this.user = user;
+		
+	}
+	public Account getAccount(){
+		
+		return account;
+	}
+	
+	public User getUser() {
+		
+		return user;
+	}
+	
+	
+}
+
+class BankService /* 뱅크 서비스 */{
+	
+	private Map<Long,BankAccount> accountMap = new HashMap<>();
+	
+	public void addAccount(long accountNumber, User user) {
+		
+		Account account = new Account(accountNumber);
+		BankAccount bankAccount = new BankAccount(account, user);
+		accountMap.put(accountNumber, bankAccount);
+	}
+	
+	
+}
+
+public class BankSystem {
+
+	public static void main(String[] args) {
+		
+		
+
+		return;
+	} 
+	
+}
